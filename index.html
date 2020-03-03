@@ -28,6 +28,36 @@
       function clickMe() {
         const content = document.querySelector(".content");
         content.innerHTML = "Hello world";
+
+        const myHeading = document.querySelector(".header");
+        myHeading.textContent = "Paras's Lab 4 ";
+
+        let name = "ParasDevkota";
+
+        let para = document.createElement("p");
+        para.className += "paragraph1";
+
+        let para2 = document.createElement("p");
+        para2.className += "paragraph2";
+
+        let paraText = document.createTextNode(
+          "My name has " + name.length + " characters"
+        );
+        para.appendChild(paraText);
+        content.insertAdjacentElement("beforeend", para);
+
+        para2.innerHTML =
+          "The third character in my name is " + name.charAt(2).toUpperCase();
+        content.insertAdjacentElement("beforeend", para2);
+
+        let para3 = document.createElement("P");
+        para3.innerHTML = name.substr(name.length - 3);
+        content.insertAdjacentElement("beforeend", para3);
+
+        const firstName = name.substr(0, 5);
+        const lastName = name.substr(5);
+        const totalLength = firstName.length + lastName.length;
+        myHeading.textContent = myHeading.textContent + totalLength;
       }
     </script>
   </body>
