@@ -38,8 +38,12 @@ let myHeading2 = document.querySelector("h1");
 
 function setUserName() {
   let myName = prompt("Please enter your name.");
-  localStorage.setItem("name", myName);
-  myHeading2.textContent = "Mozilla is cool, " + myName;
+  if (!myName || myName === null) {
+    setUserName();
+  } else {
+    localStorage.setItem("name", myName);
+    myHeading.innerHTML = "Mozilla is cool, " + myName;
+  }
 }
 
 if (!localStorage.getItem("name")) {
